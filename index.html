@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,maximum-scale=1,user-scalable=0"><title>Bebas Hipertensi: Langkah Nyata Menjaga Tekanan Darah Tetap Stabil</title><style>
+        :root{
+          --primary:#27ae60;
+          --primary-dark:#1e8449;
+          --font-main:'Roboto Slab',serif;
+          --reader-font-size:18px;
+          --note-color:#999
+        }
+        *{
+          box-sizing:border-box;
+          -webkit-tap-highlight-color:transparent;
+        }
+        html,body{
+          margin:0;
+          min-height:100%;
+          font-family:var(--font-main);
+          background:#fdfbf7;
+          color:#1f2937;
+          word-wrap:break-word;
+        }
+        body{
+          font-size:var(--reader-font-size);
+          overflow-x:hidden;
+          padding-bottom:90px;
+        }
+        .hidden{
+          display:none!important;
+        }
+        .password-overlay{
+          position:fixed;
+          inset:0;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+          z-index:9999;
+          padding:20px;
+        }
+        .password-box{
+          background:#fff;
+          padding:28px;
+          border-radius:18px;
+          width:100%;
+          max-width:380px;
+          box-shadow:0 18px 50px rgba(0,0,0,.25);
+          text-align:center;
+        }
+        .password-box input{
+          width:100%;
+          padding:14px;
+          border:1px solid #d1d5db;
+          border-radius:12px;
+          margin-top:14px;
+          font-size:16px;
+        }
+        .password-box button{
+          margin-top:12px;
+          width:100%;
+          padding:14px;
+          border:0;
+          border-radius:999px;
+          background:var(--primary);
+          color:#fff;
+          font-weight:700;
+          font-size:16px;
+        }
+        .page{
+          display:none;
+          padding:16px;
+          animation:fadeIn 0.3s ease;
+        }
+        .page.active{
+          display:block;
+        }
+        .scroll{
+          max-width:800px;
+          margin:0 auto;
+          overflow:visible;
+        }
+        .cover{
+          padding:32px 16px;
+          border-radius:22px;
+          background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+          color:#fff;
+          text-align:center;
+          margin-bottom:20px;
+        }
+        .cover img{
+          width:100%;
+          max-width:320px;
+          height:auto;
+          display:block;
+          margin:0 auto 20px;
+          border-radius:12px;
+          box-shadow:0 20px 40px rgba(0,0,0,.28);
+          object-fit:contain;
+        }
+        .cover h1{
+          margin:0 0 8px;
+          font-size:1.8rem;
+          line-height:1.2;
+        }
+        .cover h2{
+          margin:0 0 12px;
+          font-size:1rem;
+          font-weight:400;
+          opacity:.95;
+        }
+        .section{
+          background:#fff;
+          border-radius:18px;
+          padding:20px;
+          margin-top:16px;
+          box-shadow:0 4px 18px rgba(15,23,42,.06);
+        }
+        .toc-item{
+          padding:14px 0;
+          border-bottom:1px solid #f3f4f6;
+          cursor:pointer;
+          font-weight:500;
+        }
+        .toc-item:last-child{
+          border-bottom:none;
+        }
+        .chapter-header{
+          text-align:center;
+          padding-bottom:16px;
+          border-bottom:3px solid var(--primary);
+          margin-bottom:20px;
+        }
+        .chapter-header img{
+          width:100%;
+          max-width:100%;
+          height:auto;
+          display:block;
+          border-radius:14px;
+          margin:0 auto 16px;
+          object-fit:contain;
+        }
+        .chapter-header h2{
+          margin:0;
+          color:var(--primary);
+          font-size:1.5rem;
+        }
+        .chapter-header h3{
+          margin:8px 0 0;
+          color:#6b7280;
+          font-weight:400;
+        }
+        .content img{
+          max-width:100%;
+          height:auto;
+          display:block;
+          margin:16px auto;
+          border-radius:12px;
+          object-fit:contain;
+        }
+        .note{
+          border-left:5px solid var(--note-color);
+          background:color-mix(in srgb, var(--note-color) 10%, white);
+          padding:16px;
+          border-radius:0 12px 12px 0;
+          margin:16px 0;
+          box-shadow:0 2px 4px rgba(0,0,0,0.05);
+        }
+        .note h4{
+          margin:0 0 8px;
+          color:var(--note-color);
+          font-size:1rem;
+        }
+        .audio,
+        .video{
+          margin:16px 0;
+          background:#f8fafc;
+          padding:10px;
+          border-radius:12px;
+        }
+        .audio audio,
+        .video video{
+          width:100%;
+        }
+        .video video{
+          border-radius:12px;
+          background:#000;
+        }
+        .ad{
+          margin-top:20px;
+          text-align:center;
+        }
+        .ad img{
+          width:100%;
+          display:block;
+          border-radius:12px;
+          object-fit:contain;
+        }
+        .nav{
+          display:flex;
+          gap:12px;
+          justify-content:space-between;
+          margin:24px 0;
+        }
+        .nav button{
+          flex:1;
+          border:0;
+          border-radius:12px;
+          background:var(--primary);
+          color:#fff;
+          padding:12px;
+          font-weight:600;
+          font-size:14px;
+        }
+        .nav button:disabled{
+          background:#cbd5e1;
+          color:#64748b;
+        }
+        .footer{
+          position:fixed;
+          left:50%;
+          bottom:16px;
+          transform:translateX(-50%);
+          width:90%;
+          max-width:400px;
+          display:grid;
+          grid-template-columns:1fr 1.2fr 1fr;
+          gap:8px;
+          background:rgba(255,255,255,.95);
+          backdrop-filter:blur(10px);
+          padding:8px;
+          border-radius:999px;
+          box-shadow:0 12px 30px rgba(0,0,0,.12);
+          border:1px solid rgba(0,0,0,.05);
+          z-index:100;
+        }
+        .footer button{
+          border:0;
+          border-radius:999px;
+          background:var(--primary);
+          color:#fff;
+          padding:10px 0;
+          font-weight:700;
+          font-size:14px;
+          cursor:pointer;
+        }
+        .footer .toc{
+          background:#f1f5f9;
+          color:#334155;
+        }
+        .content p{
+          line-height:1.8;
+          margin:0 0 16px;
+          text-align:justify;
+        }
+        h3, h4{
+          margin:18px 0 10px;
+          line-height:1.3;
+        }
+        table{
+          width:100%;
+          border-collapse:collapse;
+          display:block;
+          overflow-x:auto;
+          white-space:nowrap;
+          -webkit-overflow-scrolling:touch;
+        }
+        td,th{
+          border:1px solid #ccc;
+          padding:10px;
+          text-align:left;
+          min-width:100px;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(5px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @media(max-width:640px){
+          .cover h1{font-size:1.6rem}
+          .section{padding:16px}
+          .footer{bottom:10px; width:94%; padding:6px}
+          .footer button{font-size:12px}
+        }
+      </style></head><body><div class="page active" id="toc"><div class="scroll"><div class="cover"><img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528" alt="cover ebook" onerror="this.style.display='none'"><h1>Bebas Hipertensi: Langkah Nyata Menjaga Tekanan Darah Tetap Stabil</h1><h2>Panduan Komprehensif Gaya Hidup, Pola Makan, dan Pengelolaan Stres untuk Jantung Sehat Tanpa Ketergantungan Obat</h2><p>oleh </p></div><div class="section"><p style="font-style:italic;color:#4b5563">Hipertensi sering dijuluki sebagai silent killer karena berkembang tanpa gejala jelas namun berisiko memicu komplikasi fatal seperti serangan jantung dan stroke. Buku digital ini hadir sebagai panduan praktis dan terstruktur untuk membantu Anda memahami, mencegah, serta mengendalikan tekanan darah secara alami.
+
+Di dalamnya, Anda akan mempelajari prinsip nutrisi tepat (termasuk penerapan diet rendah natrium/DASH), manajemen stres, strategi aktivitas fisik yang aman, hingga tips pemantauan mandiri di rumah. Ditulis dengan gaya bahasa yang lugas dan berbasis bukti ilmiah, e-book ini adalah investasi terbaik bagi siapa saja yang ingin memiliki kualitas hidup lebih sehat dan jantung yang kuat hingga usia tua.</p></div><div class="section"><h3>Daftar Isi</h3><div class="toc-item" onclick="openChapter(0)">Bab 1: Pendahuluan</div></div></div></div><div class="page" id="ch0"><div class="scroll"><div class="section"><div class="chapter-header"><h2>Bab 1: Pendahuluan</h2><h3>Mengenal Hipertensi: Mengapa Ancaman Ini Begitu Nyata?</h3></div><div class="content"><div class="audio"><strong>Audio Intro</strong><audio controls src="https://ik.imagekit.io/shimmer/ASSET/Generated%20Audio%20August%2002,%202026%20-%208_17AM.mp3"></audio></div><p><div>Hipertensi sering kali dipandang sebelah mata karena gejalanya yang jarang terlihat secara kasat mata pada stadium awal. Padahal, kondisi tekanan darah tinggi yang tidak terkontrol secara perlahan dapat merusak pembuluh darah dan organ-organ vital di dalam tubuh, seperti jantung, ginjal, dan otak. Banyak orang baru menyadari dirinya mengidap hipertensi setelah timbul komplikasi serius seperti serangan jantung atau stroke.</div><div><br></div><div>Oleh karena itu, pemahaman mendasar mengenai apa itu tekanan darah, bagaimana dampaknya terhadap tubuh, serta pentingnya deteksi dini menjadi langkah awal yang paling krusial. Mencegah hipertensi bukanlah hal yang rumit atau mustahil, melainkan tentang bagaimana kita membangun kesadaran dan menerapkan komitmen kecil dalam gaya hidup sehari-hari demi menjaga kesehatan jangka panjang.</div></p><div class="note" style="--note-color:#c0392b"><h4>Fakta Penting: Mengapa Disebut &quot;Silent Killer&quot;?</h4><div style="line-height:1.6">Menurut Organisasi Kesehatan Dunia (WHO), sebagian besar penderita hipertensi tidak merasakan gejala apa pun hingga tekanan darahnya mencapai tingkat yang sangat membahayakan. Inilah alasan mengapa pemeriksaan tekanan darah secara rutin sangat disarankan, bahkan jika Anda merasa tubuh dalam kondisi sepenuhnya sehat.</div></div><div style="text-align:center;color:#cbd5e1;margin:24px 0; letter-spacing:4px;">— • —</div><h3>Memahami Angka Tekanan Darah dan Risiko Komplikasi</h3><p><div>Untuk mencegah hipertensi secara efektif, kita perlu memahami apa yang terjadi saat tekanan darah diukur. Angka tekanan darah terdiri dari dua nilai: sistolik (angka atas) yang menunjukkan tekanan saat jantung memompa darah, dan diastolik (angka bawah) yang menunjukkan tekanan saat jantung beristirahat di antara detakan. Tekanan darah normal berada pada rentang di bawah 120/80 mmHg.</div><div><br></div><div>Ketika tekanan darah konsisten berada di atas angka normal, pembuluh darah arteri akan mengalami regangan berlebih dan kehilangan elastisitasnya. Seiring berjalannya waktu, kondisi ini memicu terbentuknya plak atau penebalan dinding arteri (aterosklerosis). Dampaknya, aliran darah menuju organ-organ vital terhambat, yang menjadi cikal bakal berkembangnya penyakit jantung koroner, gagal ginjal kronis, hingga penurunan fungsi kognitif.</div></p><div class="note" style="--note-color:#c0392b"><h4>Kategori Tekanan Darah Dewasa (Standar Medis)</h4><div style="line-height:1.6"><div>• Normal: Sistolik &lt; 120 mmHg dan Diastolik &lt; 80 mmHg</div><div>• Pra-Hipertensi: Sistolik 120–129 mmHg dan Diastolik &lt; 80 mmHg</div><div>• Hipertensi Derajat 1: Sistolik 130–139 mmHg atau Diastolik 80–89 mmHg</div><div>• Hipertensi Derajat 2: Sistolik ≥ 140 mmHg atau Diastolik ≥ 90 mmHg</div><div><br></div><div>Penting: Satu kali pengukuran tinggi belum tentu berarti Anda mengidap hipertensi. Diagnosis memerlukan pemantauan berkala dalam beberapa waktu.</div></div></div><div class="video"><strong>Video Intro</strong><video controls preload="metadata"><source src="https://ik.imagekit.io/shimmer/ASSET/Surah%20Al-Fatihah%20_%20Aniq%20Muhai.mp4?updatedAt=1784955927695">Browser Anda tidak mendukung pemutaran video.</video></div></div><div class="nav"><button disabled>← Sebelumnya</button><button disabled>Selanjutnya →</button></div><div class="ad"><a href="https://forms.gle/kS9exxSEHLBjaQ2v6" target="_blank" rel="noopener noreferrer"><img src="https://ik.imagekit.io/shimmer/ASSET/Surah%20Al-Fatihah%20_%20Aniq%20Muhai.mp4?updatedAt=1784955927695" alt="post test" onerror="this.style.display='none'"></a></div></div></div></div><div class="footer"><button class="toc" onclick="showPage('toc')">☰ Menu</button><button onclick="fs(-1)">A-</button><button onclick="fs(1)">A+</button></div><script>let size=18;function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');let sc=document.querySelector('#'+id+' .scroll');if(sc)sc.scrollTop=0;window.scrollTo(0,0)}function openChapter(i){showPage('ch'+i)}function fs(d){size=Math.max(14,Math.min(26,size+d));document.documentElement.style.setProperty('--reader-font-size',size+'px')}function checkPw(){if(document.getElementById('pwi').value=="7890"){document.getElementById('pw').classList.add('hidden')}else document.getElementById('pwErr').style.display='block'}</script></body></html>
